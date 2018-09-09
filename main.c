@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "DataStructures/LinkedList/LinkedList.h"
 
 int main()
 {
-    printf("Hello world!\n");
+    LinkedList l = NewLinkedList();
+    l->add(l,1,0);
     return 0;
 }
