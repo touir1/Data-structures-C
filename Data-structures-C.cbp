@@ -31,9 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="DataStructures/LinkedList.c">
+		<Unit filename="DataStructures/LinkedList/LinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="DataStructures/LinkedList/LinkedList.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
