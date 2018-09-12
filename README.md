@@ -12,4 +12,4 @@ An implementation of known datastructures in C
 
 ## License ##
 
-touir1.github.io is published under the [MIT license](http://www.opensource.org/licenses/mit-license).
+Data-structures-C is published under the [MIT license](http://www.opensource.org/licenses/mit-license).
