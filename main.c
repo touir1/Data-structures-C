@@ -12,5 +12,7 @@ int main()
 
     l->printList(l);
 
+    l->destruct(l);
+
     return 0;
 }

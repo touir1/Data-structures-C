@@ -27,6 +27,7 @@ LinkedList NewLinkedList(TYPES_CLASS valuesType){
 
     self->compare = & _LinkedListDefaultCompare;
     self->printElement = & _LinkedListDefaultPrintElement;
+    self->destructElement = & _LinkedListDefaultDestructElement;
 
     return self;
 }
@@ -122,10 +123,56 @@ void* _LinkedListGet(LinkedList self, int position){
     return NULL;
 }
 
+/**
+* function which destroys the LinkedList
+*
+* parameters:
+* - self(LinkedList): the LinkedList where we would add the element
+*
+* returns: void
+**/
 void _LinkedListDestruct(LinkedList self){
-    //TODO
-    printf("Destruct LinkedList");
+    if(self->size > 0){
+        LinkedListNode node = self->head;
+        if(self->valuesType != STRING_TYPE && self->valuesType != COMPLEX_TYPE) self->destructElement(& node->value,self->valuesType);
+        else self->destructElement(node->value,self->valuesType);
+        while(node->next != NULL){
+            node = node->next;
+            if(self->valuesType != STRING_TYPE && self->valuesType != COMPLEX_TYPE) self->destructElement(& node->value,self->valuesType);
+            else self->destructElement(node->value,self->valuesType);
+            free(node->previous);
+        }
+
+        self->size = 0;
+        self->head = NULL;
+
+        self->add = NULL;
+        self->remove = NULL;
+        self->search = NULL;
+        self->get = NULL;
+        self->printList = NULL;
+        self->destruct = NULL;
+
+        self->compare = NULL;
+        self->printElement = NULL;
+        self->destructElement = NULL;
+    }
     free(self);
+}
+
+/**
+* default destruct function for the LinkedList elements
+*
+* parameters:
+* - element(void*): the element to destruct
+* - valueType(TYPES_CLASS): the type of the element which is going to be destroyed
+*
+* returns: void
+**/
+void _LinkedListDefaultDestructElement(void* element, TYPES_CLASS valueType){
+    if(valueType == STRING_TYPE || valueType == COMPLEX_TYPE){
+        free(element);
+    }
 }
 
 /**

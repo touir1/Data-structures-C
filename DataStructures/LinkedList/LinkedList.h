@@ -30,6 +30,7 @@ struct _LinkedList {
     void* (*get)(LinkedList self,int position);
     void (*printList)(LinkedList self);
     void (*destruct)(LinkedList self);
+    void (*destructElement)(void* element, TYPES_CLASS valueType);
 
     // utility functions
     int (*compare)(void* element1, void* element2);
@@ -56,4 +57,5 @@ void _LinkedListDestruct(LinkedList self);
 
 int _LinkedListDefaultCompare(void* element1, void* element2);
 void _LinkedListDefaultPrintElement(void* element, TYPES_CLASS valueType);
+void _LinkedListDefaultDestructElement(void* element, TYPES_CLASS valueType);
 #endif // _LinkedList_DataStructures
