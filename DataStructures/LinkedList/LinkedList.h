@@ -58,4 +58,6 @@ void _LinkedListDestruct(LinkedList self);
 int _LinkedListDefaultCompare(void* element1, void* element2);
 void _LinkedListDefaultPrintElement(void* element, TYPES_CLASS valueType);
 void _LinkedListDefaultDestructElement(void* element, TYPES_CLASS valueType);
+
+void _LinkedListTest();
 #endif // _LinkedList_DataStructures
