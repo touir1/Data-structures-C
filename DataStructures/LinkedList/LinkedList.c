@@ -270,6 +270,11 @@ void _LinkedListPrintList(LinkedList self){
     }
 }
 
+/**
+* a function which tests all the functions in the LinkedList structure
+*
+* returns: void
+**/
 void _LinkedListTest(){
 
     LinkedList l = NewLinkedList(INT_TYPE);
