@@ -111,10 +111,29 @@ void _LinkedListRemove(LinkedList self, int position){
     printf("Remove LinkedList");
 }
 
+/**
+* searches an element in a LinkedList
+*
+* parameters:
+* - self(LinkedList): the LinkedList where we are going to look for the element
+* - element(void*): the element we are looking for in the LinkedList
+*
+* returns: int: the position of the element in the LinkedList
+**/
 int _LinkedListSearch(LinkedList self, void* element){
-    //TODO
-    printf("Search LinkedList");
-    return 0;
+    if(self->size != 0){
+        LinkedListNode node = self->head;
+        int index = 0;
+        do{
+            if(self->compare(element,node->value) == 0){
+                return index;
+            }
+            node = node->next;
+            index++;
+        }
+        while(node != NULL);
+    }
+    return -1;
 }
 
 void* _LinkedListGet(LinkedList self, int position){

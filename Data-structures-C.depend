@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1536789016 source:e:\to copy\projects\c\data-structures-c\main.c
+1536870644 source:e:\to copy\projects\c\data-structures-c\main.c
 	<stdio.h>
 	<stdlib.h>
 	"DataStructures/LinkedList/LinkedList.h"
 
-1536788933 source:e:\to copy\projects\c\data-structures-c\datastructures\linkedlist\linkedlist.c
+1536868765 source:e:\to copy\projects\c\data-structures-c\datastructures\linkedlist\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
