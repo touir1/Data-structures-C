@@ -4,7 +4,7 @@
 #include "LinkedList.h"
 
 /**
-* instanciate a new LinkedList
+* instantiate a new LinkedList
 *
 * parameters:
 * - valuesType(TYPES_CLASS): the type of the data contained in the LinkedList
