@@ -123,19 +123,22 @@ void _LinkedListRemoveByIndex(LinkedList self, int position){
             node = node->next;
             i++;
         }
+
         if(node->previous != NULL){
             node->previous->next = node->next;
         }
         if(node->next != NULL){
             node->next->previous = node->previous;
         }
-        self->destructElement(node->value, self->valuesType);
         if(position == 0){
             self->head = node->next;
         }
+
+        self->destructElement(node->value, self->valuesType);
         node->previous = NULL;
         node->next = NULL;
         free(node);
+
         self->size -= 1;
     }
 }
@@ -182,14 +185,20 @@ void* _LinkedListGet(LinkedList self, int position){
 void _LinkedListDestruct(LinkedList self){
     if(self->size > 0){
         LinkedListNode node = self->head;
+
         if(self->valuesType != STRING_TYPE && self->valuesType != COMPLEX_TYPE) self->destructElement(& node->value,self->valuesType);
         else self->destructElement(node->value,self->valuesType);
+
         while(node->next != NULL){
             node = node->next;
+
             if(self->valuesType != STRING_TYPE && self->valuesType != COMPLEX_TYPE) self->destructElement(& node->value,self->valuesType);
             else self->destructElement(node->value,self->valuesType);
+
             free(node->previous);
         }
+
+        free(node);
 
         self->size = 0;
         self->head = NULL;
@@ -205,6 +214,7 @@ void _LinkedListDestruct(LinkedList self){
         self->printElement = NULL;
         self->destructElement = NULL;
     }
+
     free(self);
 }
 
@@ -285,13 +295,16 @@ void _LinkedListDefaultPrintElement(void* element, TYPES_CLASS valueType){
 void _LinkedListPrintList(LinkedList self){
     if(self->size >0){
         printf("[");
+
         LinkedListNode node = self->head;
         self->printElement(node->value,self->valuesType);
+
         while(node->next != NULL){
             node = node->next;
             printf(", ");
             self->printElement(node->value,self->valuesType);
         }
+
         printf("]\n");
     }
     else{
@@ -327,5 +340,6 @@ void _LinkedListTest(){
     printf("printing list:\n");
     l->printList(l);
 
+    printf("destruct the list\n");
     l->destruct(l);
 }
