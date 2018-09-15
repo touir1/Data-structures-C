@@ -19,7 +19,7 @@ LinkedList NewLinkedList(TYPES_CLASS valuesType){
     self->valuesType = valuesType;
 
     self->add = & _LinkedListAdd;
-    self->remove = & _LinkedListRemove;
+    self->removeByIndex = & _LinkedListRemoveByIndex;
     self->search = & _LinkedListSearch;
     self->get = & _LinkedListGet;
     self->printList = & _LinkedListPrintList;
@@ -106,9 +106,38 @@ void _LinkedListAdd(LinkedList self, void* element, int position){
     }
 }
 
-void _LinkedListRemove(LinkedList self, int position){
-    //TODO
-    printf("Remove LinkedList");
+/**
+* removes an element from a LinkedList using its index
+*
+* parameters:
+* - self(LinkedList): the LinkedList from where we are going to remove the element
+* - position(int): the index of the element in the LinkedList
+*
+* returns: void
+**/
+void _LinkedListRemoveByIndex(LinkedList self, int position){
+    if(self->size != 0 && position < self->size){
+        LinkedListNode node = self->head;
+        int i=0;
+        while(i<position){
+            node = node->next;
+            i++;
+        }
+        if(node->previous != NULL){
+            node->previous->next = node->next;
+        }
+        if(node->next != NULL){
+            node->next->previous = node->previous;
+        }
+        self->destructElement(node->value, self->valuesType);
+        if(position == 0){
+            self->head = node->next;
+        }
+        node->previous = NULL;
+        node->next = NULL;
+        free(node);
+        self->size -= 1;
+    }
 }
 
 /**
@@ -166,7 +195,7 @@ void _LinkedListDestruct(LinkedList self){
         self->head = NULL;
 
         self->add = NULL;
-        self->remove = NULL;
+        self->removeByIndex = NULL;
         self->search = NULL;
         self->get = NULL;
         self->printList = NULL;
@@ -291,6 +320,12 @@ void _LinkedListTest(){
 
     printf("searching for 3 in list: position = %d\n",l->search(l,3));
     printf("searching for 5 in list: position = %d\n",l->search(l,5));
+
+    printf("removing the element at index 1 from the list\n");
+    l->removeByIndex(l,1);
+
+    printf("printing list:\n");
+    l->printList(l);
 
     l->destruct(l);
 }
