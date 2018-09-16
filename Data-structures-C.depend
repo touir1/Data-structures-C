@@ -25,10 +25,17 @@
 
 1537118889 e:\to copy\projects\c\data-structures-c\datastructures\utils\utils.h
 
-1537116199 source:e:\to copy\projects\c\data-structures-c\datastructures\arraylist\arraylist.c
+1537119175 source:e:\to copy\projects\c\data-structures-c\datastructures\arraylist\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"../Utils/Utils.h"
 
 1537119077 source:e:\to copy\projects\c\data-structures-c\datastructures\utils\utils.c
 	<stdio.h>
 	<stdlib.h>
 	"Utils.h"
+
+1537119349 e:\to copy\projects\c\data-structures-c\datastructures\arraylist\arraylist.h
+	"../Utils/Utils.h"
 
