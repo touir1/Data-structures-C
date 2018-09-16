@@ -170,8 +170,15 @@ int _LinkedListSearch(LinkedList self, void* element){
 }
 
 void* _LinkedListGet(LinkedList self, int position){
-    //TODO
-    printf("Get LinkedList");
+    if(self->size != 0 && position < self->size){
+        LinkedListNode node = self->head;
+        int i=0;
+        while(i<position){
+            node = node->next;
+            i++;
+        }
+        return node->value;
+    }
     return NULL;
 }
 
@@ -187,14 +194,12 @@ void _LinkedListDestruct(LinkedList self){
     if(self->size > 0){
         LinkedListNode node = self->head;
 
-        if(self->valuesType != STRING_TYPE && self->valuesType != COMPLEX_TYPE) self->destructElement(& node->value,self->valuesType);
-        else self->destructElement(node->value,self->valuesType);
+        self->destructElement(node->value,self->valuesType);
 
         while(node->next != NULL){
             node = node->next;
 
-            if(self->valuesType != STRING_TYPE && self->valuesType != COMPLEX_TYPE) self->destructElement(& node->value,self->valuesType);
-            else self->destructElement(node->value,self->valuesType);
+            self->destructElement(node->value,self->valuesType);
 
             free(node->previous);
         }
@@ -269,6 +274,8 @@ void _LinkedListTest(){
 
     printf("searching for 3 in list: position = %d\n",l->search(l,3));
     printf("searching for 5 in list: position = %d\n",l->search(l,5));
+
+    printf("getting element in index 1: %d\n",l->get(l,1));
 
     printf("removing the element at index 1 from the list\n");
     l->removeByIndex(l,1);
