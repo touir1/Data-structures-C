@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "LinkedList.h"
+#include "../Utils/Utils.h"
 
 /**
 * instantiate a new LinkedList
@@ -25,9 +26,9 @@ LinkedList NewLinkedList(TYPES_CLASS valuesType){
     self->printList = & _LinkedListPrintList;
     self->destruct = & _LinkedListDestruct;
 
-    self->compare = & _LinkedListDefaultCompare;
-    self->printElement = & _LinkedListDefaultPrintElement;
-    self->destructElement = & _LinkedListDefaultDestructElement;
+    self->compare = & _UtilsDefaultCompare;
+    self->printElement = & _UtilsDefaultPrintElement;
+    self->destructElement = & _UtilsDefaultDestructElement;
 
     return self;
 }
@@ -219,72 +220,6 @@ void _LinkedListDestruct(LinkedList self){
 }
 
 /**
-* default destruct function for the LinkedList elements
-*
-* parameters:
-* - element(void*): the element to destruct
-* - valueType(TYPES_CLASS): the type of the element which is going to be destroyed
-*
-* returns: void
-**/
-void _LinkedListDefaultDestructElement(void* element, TYPES_CLASS valueType){
-    if(valueType == STRING_TYPE || valueType == COMPLEX_TYPE){
-        free(element);
-    }
-}
-
-/**
-* default compare function for the LinkedList elements
-*
-* parameters:
-* - element1(void*): the first element to compare
-* - element2(void*): the second element to compare with
-*
-* returns: int -> 1 if element1 > element2, -1 if element1 < element2 0 otherwise
-**/
-int _LinkedListDefaultCompare(void* element1, void* element2){
-    if(element1 > element2) return 1;
-    if(element1 < element2) return -1;
-    return 0;
-}
-
-/**
-* prints out an element
-*
-* parameters:
-* - element(void*): the element which is going to be printed
-* - valueType(TYPES_CLASS): the type of the element which is going to be printed
-*
-* returns: void
-**/
-void _LinkedListDefaultPrintElement(void* element, TYPES_CLASS valueType){
-    switch(valueType){
-    case INT_TYPE:
-        printf("%d",element); break;
-    case UNSIGNED_INT_TYPE:
-        printf("%u",element); break;
-    case LONG_TYPE:
-        printf("%l",element); break;
-    case UNSIGNED_LONG_TYPE:
-        printf("%lu",element); break;
-    case LONG_LONG_TYPE:
-        printf("%lld",element); break;
-    case UNSIGNED_LONG_LONG_TYPE:
-        printf("%llu",element); break;
-    case FLOAT_TYPE:
-        printf("%f",element); break;
-    case CHAR_TYPE:
-        printf("%c",element); break;
-    case STRING_TYPE:
-        printf("%s",element); break;
-    case COMPLEX_TYPE:
-        printf("%p",(void*) &element); break;
-    default:
-        printf("%p",(void*) &element); break;
-    }
-}
-
-/**
 * prints out the content of the LinkedList
 *
 * parameters:
@@ -319,6 +254,7 @@ void _LinkedListPrintList(LinkedList self){
 **/
 void _LinkedListTest(){
 
+    printf("create the list\n");
     LinkedList l = NewLinkedList(INT_TYPE);
 
     printf("adding 1 to the list at position 0\n");
