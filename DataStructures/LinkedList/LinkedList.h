@@ -17,6 +17,7 @@ struct _LinkedList {
     void (*removeByIndex)(LinkedList self, int position);
     int (*search)(LinkedList self, void* element);
     void* (*get)(LinkedList self,int position);
+    void (*set)(LinkedList self, void* element, int position);
     void (*printList)(LinkedList self);
     void (*destruct)(LinkedList self);
 
@@ -41,6 +42,7 @@ void _LinkedListAdd(LinkedList self, void* element, int position);
 void _LinkedListRemoveByIndex(LinkedList self, int position);
 int _LinkedListSearch(LinkedList self, void* element);
 void* _LinkedListGet(LinkedList self, int position);
+void _LinkedListSet(LinkedList self, void* element, int position);
 void _LinkedListPrintList(LinkedList self);
 void _LinkedListDestruct(LinkedList self);
 

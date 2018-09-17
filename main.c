@@ -14,4 +14,7 @@ void testFunction(){
     printf("=========== LinkedList ===========\n");
     _LinkedListTest();
     printf("==================================\n");
+    printf("=========== ArrayList  ===========\n");
+    _ArrayListTest();
+    printf("==================================\n");
 }

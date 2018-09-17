@@ -31,10 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="DataStructures/ArrayList/ArrayList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="DataStructures/ArrayList/ArrayList.h" />
 		<Unit filename="DataStructures/LinkedList/LinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="DataStructures/LinkedList/LinkedList.h" />
+		<Unit filename="DataStructures/Utils/Utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="DataStructures/Utils/Utils.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

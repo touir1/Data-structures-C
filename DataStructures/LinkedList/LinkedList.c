@@ -23,6 +23,7 @@ LinkedList NewLinkedList(TYPES_CLASS valuesType){
     self->removeByIndex = & _LinkedListRemoveByIndex;
     self->search = & _LinkedListSearch;
     self->get = & _LinkedListGet;
+    self->set = & _LinkedListSet;
     self->printList = & _LinkedListPrintList;
     self->destruct = & _LinkedListDestruct;
 
@@ -169,6 +170,15 @@ int _LinkedListSearch(LinkedList self, void* element){
     return -1;
 }
 
+/**
+* gets an element by index from a LinkedList
+*
+* parameters:
+* - self(LinkedList): the LinkedList where we are going to look for the element
+* - position(int): the position of the element we are looking for in the LinkedList
+*
+* returns: void*: the element we are looking for
+**/
 void* _LinkedListGet(LinkedList self, int position){
     if(self->size != 0 && position < self->size){
         LinkedListNode node = self->head;
@@ -180,6 +190,21 @@ void* _LinkedListGet(LinkedList self, int position){
         return node->value;
     }
     return NULL;
+}
+
+/**
+* sets an element by index in a LinkedList
+*
+* parameters:
+* - self(LinkedList): the LinkedList where we are going to add the element
+* - element(void*): the element we are going to add
+* - position(int): the position in which we are going to add the element
+*
+* returns: void
+**/
+void _LinkedListSet(LinkedList self, void* element, int position){
+    //TODO
+    printf("LinkedListSet function\n");
 }
 
 /**
@@ -276,6 +301,12 @@ void _LinkedListTest(){
     printf("searching for 5 in list: position = %d\n",l->search(l,5));
 
     printf("getting element in index 1: %d\n",l->get(l,1));
+
+    printf("setting the value 11 in the element in index 2\n");
+    l->set(l,11,2);
+
+    printf("printing list:\n");
+    l->printList(l);
 
     printf("removing the element at index 1 from the list\n");
     l->removeByIndex(l,1);
