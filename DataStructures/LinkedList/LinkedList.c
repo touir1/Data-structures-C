@@ -203,8 +203,16 @@ void* _LinkedListGet(LinkedList self, int position){
 * returns: void
 **/
 void _LinkedListSet(LinkedList self, void* element, int position){
-    //TODO
-    printf("LinkedListSet function\n");
+    if(self->size != 0 && position < self->size){
+        LinkedListNode node = self->head;
+        int i=0;
+        while(i<position){
+            node = node->next;
+            i++;
+        }
+        if(self->valuesType != STRING_TYPE && self->valuesType != COMPLEX_TYPE) node->value = element;
+        else node->value = & element;
+    }
 }
 
 /**
