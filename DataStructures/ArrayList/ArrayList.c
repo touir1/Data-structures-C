@@ -134,8 +134,20 @@ void _ArrayListDestruct(ArrayList self){
 * returns: void
 **/
 void _ArrayListPrintList(ArrayList self){
-    //TODO
-    printf("ArrayListPrintList function\n");
+    if(self->size >0){
+        printf("[");
+        self->printElement(self->elements[0],self->valuesType);
+        int i;
+        for(i=1;i<self->size;i++){
+            printf(", ");
+            self->printElement(self->elements[i],self->valuesType);
+        }
+
+        printf("]\n");
+    }
+    else{
+        printf("[]\n");
+    }
 }
 
 /**

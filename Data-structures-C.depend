@@ -4,7 +4,7 @@
 	<stdlib.h>
 	"DataStructures/LinkedList/LinkedList.h"
 
-1537220765 source:e:\to copy\projects\c\data-structures-c\datastructures\linkedlist\linkedlist.c
+1537303072 source:e:\to copy\projects\c\data-structures-c\datastructures\linkedlist\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -25,7 +25,7 @@
 
 1537118889 e:\to copy\projects\c\data-structures-c\datastructures\utils\utils.h
 
-1537220832 source:e:\to copy\projects\c\data-structures-c\datastructures\arraylist\arraylist.c
+1537391395 source:e:\to copy\projects\c\data-structures-c\datastructures\arraylist\arraylist.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayList.h"
