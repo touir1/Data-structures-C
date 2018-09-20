@@ -3,6 +3,10 @@
 
 An implementation of known datastructures in C
 
+## Data Structures implemented ##
+
+* LinkedList: [Wikipedia](https://en.wikipedia.org/wiki/Linked_list), [header file](https://github.com/touir1/Data-structures-C/blob/master/DataStructures/LinkedList/LinkedList.h).
+
 ## Authors ##
 
 * Mohamed Ali Touir
