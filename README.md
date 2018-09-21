@@ -1,7 +1,7 @@
 # Data-structures-C
 [![npm](https://img.shields.io/npm/l/date-2.svg?style=flat-square)](https://github.com/touir1/Data-structures-C/blob/master/LICENSE)
 
-An implementation of known datastructures in C
+An implementation of known datastructures in C.
 
 ## Data Structures implemented ##
 
