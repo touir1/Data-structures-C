@@ -1,5 +1,5 @@
 # Data-structures-C
-[![npm](https://img.shields.io/npm/l/date-2.svg?style=flat-square)](https://github.com/touir1/Data-structures-C/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/l/date-2.svg?style=flat-square)](https://github.com/touir1/Data-structures-C/blob/master/LICENSE) [![npm](https://img.shields.io/badge/Langage-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 
 An implementation of known datastructures in C.
 
