@@ -1,12 +1,14 @@
-
 # Data-structures-C
 [![npm](https://img.shields.io/npm/l/date-2.svg?style=flat-square)](https://github.com/touir1/Data-structures-C/blob/master/LICENSE) [![npm](https://img.shields.io/badge/Langage-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 
 An implementation of known datastructures in C.
 
+## Documentation ##
+The full documentation can be found in the [wiki page](https://github.com/touir1/Data-structures-C/wiki).
+
 ## Data Structures implemented ##
 
-* LinkedList: [Wikipedia](https://en.wikipedia.org/wiki/Linked_list), [header file](https://github.com/touir1/Data-structures-C/blob/master/DataStructures/LinkedList/LinkedList.h).
+* LinkedList: [Wikipedia](https://en.wikipedia.org/wiki/Linked_list), [Documentation](https://github.com/touir1/Data-structures-C/wiki/LinkedList).
 
 ## Authors ##
 
