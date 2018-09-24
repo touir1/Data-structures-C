@@ -9,6 +9,7 @@ The full documentation can be found in the [wiki page](https://github.com/touir1
 ## Data Structures implemented ##
 
 * LinkedList: [Wikipedia](https://en.wikipedia.org/wiki/Linked_list), [Documentation](https://github.com/touir1/Data-structures-C/wiki/LinkedList).
+* ArrayList: [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_array), in progress.
 
 ## Authors ##
 
